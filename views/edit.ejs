@@ -1,0 +1,24 @@
+<%include ./partials/header%>
+<form action="/blogs/<%=blog._id%>?_method=PUT" method="POST">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Edit <%=blog.title%></h1>
+            <div class="form-group has-success has-feedback">
+                <label class="control-label" >Title of the Post</label>
+                <input type="text" class="form-control" name="blog[title]" placeholder="Enter The Title"  value="<%=blog.title%>"  required>
+            </div>
+
+            <div class="form-group has-success has-feedback">
+                <label class="control-label" >Image of the Post</label>
+                <input type="text" class="form-control" name="blog[image]" placeholder="Enter the Url of The Image" value="<%=blog.image%>" required>
+            </div>
+
+            <div class="form-group has-success has-feedback">
+                <label class="control-label" >Description of the Post</label>
+                <textarea class="form-control" rows="5" name="blog[body]" placeholder="Enter the description of the post" required> <%=blog.body%></textarea>
+            </div>
+            <input type="submit" class="btn btn-lg btn-success" value="Submit Post">
+        </div>
+    </div>
+</form>
+<%include ./partials/fotter%>
